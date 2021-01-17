@@ -2,27 +2,22 @@
 
 namespace RefKullanimi
 {
-    class Referans
-    {
-        public void Kare(ref int i, ref int k)
-        {
-            i = i * k;
-        }
-    }
-
-    class RefOrnek
+    class Program
     {
         static void Main()
         {
-            Referans rf = new Referans();
+            int x = 5;
 
-            int a = 10;
-            int b = 20;
-            Console.WriteLine("Çağrıdan önce: " + a);
+            Console.WriteLine("ilk değer : " + x);
 
-            rf.Kare(ref a, ref b);
+            degistir(ref x);
 
-            Console.WriteLine("Çağrıdan sonra: " + a);
+            Console.WriteLine("ref'den gelen değer : " + x); //ref bir değişken için kullanılır. ref de ilk değer olmalıdır. (int x=5;)
+        }
+
+        static void degistir(ref int y)
+        {
+            y = 30;
         }
     }
 }

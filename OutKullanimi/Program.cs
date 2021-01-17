@@ -2,38 +2,22 @@
 
 namespace OutKullanimi
 {
-	class OutParametre
-	{
-		int uc, bes = 0;
-		public int GetSayi(int n, out int sayi)
-		{
+    class Program
+    {
+        static void Main()
+        {
+            int x = 5;
 
-			for (int i = 1; i <= n; i++)
-			{
+            Console.WriteLine("ilk değer : " + x);
 
-				if (i % 3 == 0)
-					uc++;
+            degistir(out x);
 
-				if (i % 5 == 0)
-					bes++;
-			}
-			sayi = bes;
+            Console.WriteLine("out'den gelen değer : " + x); //out birden fazla değişken için döndürülür. ve değer atanmayabilir. (int x;)
+        }
 
-			return uc;
-		}
-	}
-
-	class OutOrnek
-	{
-		static void Main()
-		{
-			OutParametre op = new OutParametre();
-			int a, b;
-
-			a = op.GetSayi(25, out b);
-
-			System.Console.WriteLine("Üçe bölünen sayısı: " + a);
-			System.Console.WriteLine("Beşe bölünen sayısı: " + b);
-		}
-	}
+        static void degistir(out int y)
+        {
+            y = 30;
+        }
+    }
 }
